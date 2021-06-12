@@ -1,15 +1,29 @@
 package _06_tea_party;
 
-public class TeaParty {
+import static org.junit.Assert.assertEquals;
+
+import org.junit.Test;
+
+class TeaParty {
 	String name;
 	boolean isWoman;
 	boolean isKnighted;
-	public TeaParty(String name, boolean isWoman, boolean isKnighted){
-		
-	}
-	
+	String title;
     public String welcome(String name, boolean isWoman, boolean isKnighted) {
-        
+        if(isWoman) {
+        	if(isKnighted) {
+        		title = "Lady";
+        	}else {
+        		title = "Ms.";
+        	}	
+        }else {
+        	if(isKnighted) {
+        		title = "Sir";
+        	}else {
+        		title = "Mr.";
+        	}
+        }
+        return ("Hello " + title + " " + name);
     }
 }
 
